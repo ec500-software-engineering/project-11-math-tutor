@@ -1,7 +1,7 @@
 # python-CI-template
 Python CI template for EC500 Software Engineering
 
-Project: Math Tutor
+Project: Math Path 
 
 Math Tutor is a web service that enables teachers to distribute
 practice work for students. 
@@ -27,4 +27,4 @@ Technologies Used
 -Heroku
 -Node JS
 -Express
--Django
+-Passport
