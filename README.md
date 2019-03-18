@@ -37,4 +37,8 @@ Technologies Used
 
 
 Usage
+-to install packages
+npm install
+
 -for testing purposes
+npm start
