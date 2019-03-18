@@ -25,6 +25,16 @@ Stretch Goals
 
 Technologies Used
 -Heroku
+    Heroku will be used to manage deployment and testing. 
 -Node JS
+    Node js will be used for back end development
 -Express
+    Express will be used as a framework for backend
 -Passport
+    Passport will handle user auth
+-NPM
+    We are using npm as a package manager
+
+
+Usage
+-for testing purposes
