@@ -1,7 +1,4 @@
-# python-CI-template
-Python CI template for EC500 Software Engineering
-
-Project: Math Path 
+# Project: Math Path 
 
 Math Tutor is a web service that enables teachers to distribute
 practice work for students. 
@@ -24,21 +21,22 @@ Stretch Goals
 
 
 Technologies Used
--Heroku
-    Heroku will be used to manage deployment and testing. 
--Node JS
-    Node js will be used for back end development
--Express
-    Express will be used as a framework for backend
--Passport
-    Passport will handle user auth
--NPM
-    We are using npm as a package manager
+
+* Heroku: Heroku will be used to manage deployment and testing. 
+* Node JS: Node js will be used for back end development
+* Express: Express will be used as a framework for backend
+* Passport: Passport will handle user auth
+* NPM: We are using npm as a package manager
 
 
-Usage
--to install packages
+## Usage
+
+to install packages:
+```
 npm install
+```
 
--for testing purposes
+for testing purposes
+```
 npm start
+```
