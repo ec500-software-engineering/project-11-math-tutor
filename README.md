@@ -24,21 +24,21 @@ practice work for students.
 
 
 ### Technologies Used
--Heroku
+- Heroku
     Heroku will be used to manage deployment and testing.
--Node JS
+- Node JS
     Node js will be used for back end development
--Express
+- Express
     Express will be used as a framework for backend
--Passport
+- Passport
     Passport will handle user auth
--NPM
+- NPM
     We are using npm as a package manager
 
 
 ### Usage
--to install packages
+- to install packages
 npm install
 
--for testing purposes
+- for testing purposes
 npm start
