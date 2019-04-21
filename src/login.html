@@ -1,0 +1,47 @@
+<html>
+<body>
+    <p>Username</p><br>
+    <input type="text" id ="username">
+    <p>Password</p><br>
+    <input type="password" id ="password"><br>
+    <button onclick = "firebaseLogin()" id="login-btn">
+        Login
+    </a>
+
+
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
+
+<script>
+
+    var config = {
+    apiKey: "AIzaSyCg_6hjpweEXjwnEpVrUbIhfjAfCikgUAc",
+    authDomain: "mathpath-c0a60.firebaseapp.com",
+    databaseURL: "https://mathpath-c0a60.firebaseio.com",
+    projectId: "mathpath-c0a60",
+    storageBucket: "mathpath-c0a60.appspot.com",
+    messagingSenderId: "448979947802"
+  };
+  firebase.initializeApp(config);
+
+function firebaseLogin()
+{
+    var email = document.getElementById("username").value
+    var password = document.getElementById("password").value
+    console.log(email);
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+
+  // Handle Errors here.TODO
+})
+}
+
+
+</script>
+</body>
+
+</html>

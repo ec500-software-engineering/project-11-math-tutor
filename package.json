@@ -12,6 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "firebase": "^5.10.0",
+    "firebase-admin": "^7.3.0",
+    "firebaseui": "^3.5.2",
     "mongodb": "^3.0.1"
   },
   "devDependencies": {
