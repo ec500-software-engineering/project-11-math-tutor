@@ -32,7 +32,19 @@ ui.start('#firebaseui-auth-container', {
 //set up root direcrtory
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/src/login.html')
+})//post main page (right now its login)
+
+app.get('/profile', function(req, res){
+    res.sendFile(__dirname + '/src/profile.html')
+})//post main page (right now its login)
+
+app.get('/signup', function(req, res){
+    res.sendFile(__dirname + '/src/signup.html')
 })//post main page
+
+app.get('/styles/style', function(req, res){
+    res.sendFile(__dirname + '/styles/style.css')
+})
 
 http.Server(app).listen((process.env.PORT || 3000),function(){
     console.log('listening on *:3000')

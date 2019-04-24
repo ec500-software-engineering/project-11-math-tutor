@@ -8,12 +8,9 @@
     <input type="text" id ="username">
     <p>Password</p><br>
     <input type="password" id ="password"><br>
-    <button onclick = "firebaseLogin()" id="login-btn">
-        Login
-    </button><br>
-    <a href = "/signup">
-        New User
-    </a>
+    <button onclick = "firebaseSignup()" id="login-btn">
+        Signup 
+    </button>
 
 
 
@@ -37,20 +34,18 @@
   };
   firebase.initializeApp(config);
 
-function firebaseLogin()
+function firebaseSignup()
 {
     var email = document.getElementById("username").value
     var password = document.getElementById("password").value
     console.log(email);
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage);
-        document.getElementById("ErrorMessage").innerHTML = "<p>"+errorMessage+"</p>"
-
+        // Handle Errors here.TODO
 })
-    console.log("here");
-    window.location.pathname = '/profile';
+    window.location.pathname = '/';
 }
 
 
