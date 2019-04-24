@@ -42,6 +42,10 @@ app.get('/signup', function(req, res){
     res.sendFile(__dirname + '/src/signup.html')
 })//post main page
 
+app.get('/class', function(req, res){
+    res.sendFile(__dirname + '/src/class.html')
+})
+
 app.get('/styles/style', function(req, res){
     res.sendFile(__dirname + '/styles/style.css')
 })

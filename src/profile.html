@@ -3,8 +3,11 @@
     <link rel = "stylesheet" type = "text/css" href = "/styles/style">
 </head>
 <body>
-    <div id = "username"></div>
-    <p>Homepage</p>
+    <div id = "username"></div><br>
+    <button onclick = "logout()" >Logout</button>
+    <h1>Homepage</h1><br>
+    <h1>Your Classes</h1>
+    <div id = "classes"></div> 
 
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -25,36 +28,76 @@
     messagingSenderId: "448979947802"
   };
   firebase.initializeApp(config);
+  var database = firebase.database();
 
 window.onload = function()
 {
-    getUserData();
+    setTimeout(function() { getUserData(); }, 500);
 };
 
 firebase.auth().onAuthStateChanged(function(user) {
     console.log("here");
   if (user) {
     // User is signed in.
-    var displayName = user.displayName;
-    var email = user.email;
-    var emailVerified = user.emailVerified;
-    var photoURL = user.photoURL;
-    var isAnonymous = user.isAnonymous;
-    var uid = user.uid;
-    var providerData = user.providerData;
+    console.log("login");
     // ...
   } else {
     // User is signed out.
     // ...
-    window.location = "/";
+    window.location.pathname = '/';
+    console.log("logout");
   }
 });
 
 function getUserData()
 {
+    var userId = firebase.auth().currentUser.uid;
+    var userName = firebase.auth().currentUser.email;
+    document.getElementById("username").innerHTML = "<p>"+"welcome: " + userName+"</p>"
+
+    var root = database.ref('classes/'+userId);
+    root.on('value',function(snap)
+        {
+            data = snap.val()
+            if(data!=null)
+            {
+                pageTable = ""
+                for(var page in data)
+                {
+                    pageTable+="<a href = /class?" +page+ ">"
+                    pageTable+=page
+                    pageTable+="</a>"
+                    pageTable+="<br>"
+                }
+            }
+            console.log(snap.val())
+            document.getElementById("classes").innerHTML = pageTable 
+        });
     console.log("getting user data");
 }
 
+function postData(page,post)
+{
+    var userId = firebase.auth().currentUser.uid;
+    var root = database.ref('classes/' + userId+"/"+page);
+    root.set(
+        {
+            post
+        });
+}
+
+function logout()
+{
+    firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    }, function(error) {
+    // An error happened.
+    });
+    window.location.pathname = '/';
+}
+
+
+
 </script>
 </body>
-
+</html>

@@ -48,9 +48,9 @@ function firebaseLogin()
         console.log(errorMessage);
         document.getElementById("ErrorMessage").innerHTML = "<p>"+errorMessage+"</p>"
 
-})
-    console.log("here");
-    window.location.pathname = '/profile';
+    }).then(function(){
+        window.location.pathname = '/profile';
+    })
 }
 
 
