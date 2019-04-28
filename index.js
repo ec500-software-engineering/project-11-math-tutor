@@ -46,6 +46,10 @@ app.get('/class', function(req, res){
     res.sendFile(__dirname + '/src/class.html')
 })
 
+app.get('/res/logo', function(req, res){
+    res.sendFile(__dirname + '/resources/Logo.png')
+})
+
 app.get('/styles/style', function(req, res){
     res.sendFile(__dirname + '/styles/style.css')
 })
