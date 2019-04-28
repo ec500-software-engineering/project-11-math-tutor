@@ -71,17 +71,16 @@ span.psw {
 </head>
 <body>
 
-<form action="/action_page.php">
   <div class="imgcontainer">
     <img src="logo.png" alt="Logo" class="logo">
   </div>
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Username" id="username" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" id="password" required>
 
     <button onclick = "firebaseLogin()" id="login-btn">
         Login
@@ -94,7 +93,6 @@ span.psw {
     </a>
   </div>
 
-</form>
 
 
 
