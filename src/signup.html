@@ -31,17 +31,25 @@
       opacity: 0.8;
     }
 
+    .container {
+      margin: auto;
+      width: 60%;
+      padding: 1px;
+    }
+
     </style>
 </head>
 <body>
     <div id = "ErrorMessage"></div>
-    <label for="uname"><b>Enter Desired Username</b></label>
-    <input type="text" placeholder="Username" id ="username">
-    <label for="uname"><b>Enter Desired Password</b></label>
-    <input type="password" placeholder="Password" id ="password"><br>
-    <button onclick = "firebaseSignup()" id="login-btn">
-        Signup
-    </button>
+    <div class="container">
+      <label for="uname"><b>Enter Desired Username</b></label>
+      <input type="text" placeholder="Username" id ="username">
+      <label for="uname"><b>Enter Desired Password</b></label>
+      <input type="password" placeholder="Password" id ="password"><br>
+      <button onclick = "firebaseSignup()" id="login-btn">
+          Signup
+      </button>
+    </div>
 
 
 
