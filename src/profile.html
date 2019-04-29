@@ -1,20 +1,15 @@
 <html>
 <head>
     <link rel = "stylesheet" type = "text/css" href = "/styles/style">
-    <style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
     body {
       font-family: Arial, Helvetica, sans-serif;
       background-color: #D3D3D3;
     }
     form {border: 3px solid #4CAF50;}
     button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
+
     }
 
     .container {
@@ -23,18 +18,27 @@
       padding: 1px;
     }
 
-    </style>
+    h1.class_one{
+      color: #4CAF50;
+    }
+
+</style>
 </head>
 <body>
-    <div id = "username"></div><br>
-    <button onclick = "logout()" >Logout</button>
-    <h1>Homepage</h1><br>
+  <div class="row">
+    <div class="col-5" id = "username"></div>
+    <div class="col-6"><h1 class="class_one" >Homepage</h1></div>
+    <div class="col-1"><button onclick = "logout()" type="button" class="btn btn-danger">logout</button></div>
+  </div>
+
+    <br>
+    <br>
     <h1>Your Classes</h1>
 
     <div id = "classes"></div>
     <input type="text" placeholder="New Class Name" id="className" required>
-    <button onclick = "addClass()" id="add-class">Add Class</button>
-    
+    <button onclick = "addClass()" id="add-class" class="btn btn-success">Add Class</button>
+
 
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
