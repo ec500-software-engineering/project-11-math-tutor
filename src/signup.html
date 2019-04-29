@@ -52,52 +52,15 @@
     </div>
 
 
-
-
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
 
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
+  <script src="/script/signup"></script>
 
 <script>
-
-    var config = {
-    apiKey: "AIzaSyCg_6hjpweEXjwnEpVrUbIhfjAfCikgUAc",
-    authDomain: "mathpath-c0a60.firebaseapp.com",
-    databaseURL: "https://mathpath-c0a60.firebaseio.com",
-    projectId: "mathpath-c0a60",
-    storageBucket: "mathpath-c0a60.appspot.com",
-    messagingSenderId: "448979947802"
-  };
-  firebase.initializeApp(config);
-
-function firebaseSignup()
-{
-    var email = document.getElementById("username").value
-    var password = document.getElementById("password").value
-    isError = 0
-    console.log(email);
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        isError = 1
-        document.getElementById("ErrorMessage").innerHTML = "<p>"+errorMessage+"</p>"
-        console.log(errorMessage);
-        // Handle Errors here.TODO
-})
-    if(isError)
-    {
-        setTimeout(returnToLogin,1000)
-    }
-}
-
-function returnToLogin()
-{
-    window.location.pathname = '/';
-}
-
 
 </script>
 </body>
