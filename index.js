@@ -72,6 +72,10 @@ app.get('/script/class', function(req, res){
     res.sendFile(__dirname + '/scripts/class.js')
 })
 
+app.get('/script/firebaseInstance', function(req, res){
+    res.sendFile(__dirname + '/scripts/firebaseInstance.js')
+})
+
 
 http.Server(app).listen((process.env.PORT || 3000),function(){
     console.log('listening on *:3000')
