@@ -44,26 +44,11 @@ function getUserData()
     console.log("getting user data");
 }
 
-function postData(page,post)
-{
-    var userId = firebase.auth().currentUser.uid;
-    var root = database.ref('classes/' + userId+"/"+page);
-    root.set(
-        {
-            post
-        });
-}
 
-function logout()
-{
-    firebase.auth().signOut().then(function() {
-    // Sign-out successful.
-    }, function(error) {
-    // An error happened.
-    });
-    window.location.pathname = '/';
-}
 
+/*
+ * Creates a new class
+ */
 function addClass()
 {
     console.log("here")

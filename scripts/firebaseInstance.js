@@ -8,3 +8,36 @@ var config = {
   };
   firebase.initializeApp(config);
   var database = firebase.database();
+
+/*
+ * posts data within users directory
+ */
+function postData(page,post)
+{
+    if(page!=null && page!="")
+    {
+        var userId = firebase.auth().currentUser.uid;
+        var root = database.ref('classes/' + userId+"/"+page);
+        root.set(
+        {
+            post
+        });
+
+    }
+}
+
+/*
+ * logs out user
+ */
+
+function logout()
+{
+    firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    }, function(error) {
+    // An error happened.
+    });
+    window.location.pathname = '/';
+}
+
+
