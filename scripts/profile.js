@@ -1,8 +1,14 @@
+/*
+ * initialize the page
+ */
 window.onload = function()
 {
     setTimeout(function() { getUserData(); }, 500);
 };
 
+/*
+ * update login status
+ */
 firebase.auth().onAuthStateChanged(function(user) {
     console.log("here");
   if (user) {
@@ -17,6 +23,9 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+/*
+ * initializes page with user data values from server
+ */
 function getUserData()
 {
     var userId = firebase.auth().currentUser.uid;
@@ -44,6 +53,10 @@ function getUserData()
     console.log("getting user data");
 }
 
+/*
+ * logs out and returns to login screen
+ *
+ */
 function logout()
 {
     firebase.auth().signOut().then(function() {

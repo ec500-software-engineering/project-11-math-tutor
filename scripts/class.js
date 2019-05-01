@@ -1,3 +1,6 @@
+/*
+ * Returns url param struct. Helps to iterate over url params
+ */
 function getAllUrlParams(url) {
 
   // get query string from url (optional) or window
@@ -59,6 +62,9 @@ function getAllUrlParams(url) {
   return obj;
 }
 
+/*
+ * sets the value of a page 
+ */
 function postData(page,post)
 {
     var userId = firebase.auth().currentUser.uid;
@@ -69,6 +75,10 @@ function postData(page,post)
         });
 }
 
+/*
+ * wrapper for postData()
+ * posts page data in proper page
+ */
 function addPost()
 {
     pageName = getAllUrlParams().page 
@@ -78,6 +88,9 @@ function addPost()
     postData(pageName,postValue)
 }
 
+/*
+ * loads user data from server 
+ */
 function getUserData()
 {
     var userId = getAllUrlParams().author;
@@ -95,6 +108,9 @@ function getUserData()
         });
 }
 
+/*
+ * posts user data in proper div on page
+ */
 function showUserData(prevPost)
 {
 
@@ -126,6 +142,9 @@ function showUserData(prevPost)
     }
 }
 
+/*
+ * logs out user from firebase 
+ */
 function logout()
 {
     firebase.auth().signOut().then(function() {
@@ -136,6 +155,9 @@ function logout()
     setTimeout(function() { getUserData(); }, 500);
 }
 
+/*
+ * initializes user data on page load
+ */
 window.onload = function()
 {
    setTimeout(function() { getUserData(); }, 500);

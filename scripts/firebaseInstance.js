@@ -1,3 +1,6 @@
+/*
+ * public api information
+ */
 var config = {
     apiKey: "AIzaSyCg_6hjpweEXjwnEpVrUbIhfjAfCikgUAc",
     authDomain: "mathpath-c0a60.firebaseapp.com",
@@ -14,7 +17,7 @@ var config = {
  */
 function postData(page,post)
 {
-    if(page!=null && page!="")
+    if(page!=null && page!="")//prevents overwriting directory
     {
         var userId = firebase.auth().currentUser.uid;
         var root = database.ref('classes/' + userId+"/"+page);

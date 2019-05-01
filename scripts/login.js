@@ -1,3 +1,6 @@
+/*
+ * Authenticate and update url
+ */
 function firebaseLogin()
 {
     var email = document.getElementById("username").value
