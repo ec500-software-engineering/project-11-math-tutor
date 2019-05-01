@@ -44,6 +44,16 @@ function getUserData()
     console.log("getting user data");
 }
 
+function logout()
+{
+    firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    }, function(error) {
+    // An error happened.
+    });
+
+    window.location.pathname = '/';
+}
 
 
 /*

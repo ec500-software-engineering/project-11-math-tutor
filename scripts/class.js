@@ -110,18 +110,30 @@ function showUserData(prevPost)
         subject+="</textarea>"
 
         subject+="<button onclick = 'addPost()' class='w3-button w3-padding-large w3-white w3-border' id = 'post-btn'>save</button>"
+        subject+="<div class='col-1'><button onclick = 'logout()' type='button' class='btn btn-danger'>logout</button></div>"
+
         document.getElementById("classData").innerHTML = subject 
         console.log("here")
         console.log(subject)
     }
     else
     {
-        var subject = "<p>"
+        var subject = "<pre><code>"
         subject+=prevPostData;
-        subject+="</p>"
+        subject+="</code></pre>"
         console.log(subject)
         document.getElementById("classData").innerHTML = subject 
     }
+}
+
+function logout()
+{
+    firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    }, function(error) {
+    // An error happened.
+    });
+    setTimeout(function() { getUserData(); }, 500);
 }
 
 window.onload = function()
